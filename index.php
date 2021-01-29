@@ -9,6 +9,8 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Start a session
+session_start();
 //Require the autoload file
 require_once('vendor/autoload.php');
 
@@ -30,14 +32,23 @@ $f3->route('GET /order', function () {
 
 //order2 page
 $f3->route('POST /order2', function () {
-    var_dump($_POST);
+    if(isset($_POST['type'])){
+        $_SESSION['type'] = $_POST['type'];
+    }
+
+    $_SESSION['colors'] = $_POST['colors'];
+
     $view = new Template();
     echo $view->render('views/pet-order2.html');
 });
 
 //summary page
 $f3->route('POST /summary', function () {
-    var_dump($_POST);
+
+    if(isset($_POST['name'])){
+        $_SESSION['name'] = $_POST['name'];
+    }
+
     $view = new Template();
     echo $view->render('views/order-summary.html');
 });
