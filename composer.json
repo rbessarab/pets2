@@ -1,0 +1,16 @@
+{
+  "name": "rbessarab/328/pets2",
+  "authors": [
+    {
+      "name": "Ruslan Bessarab",
+      "email": "rbessarab@mail.greenriver.edu"
+    },
+    {
+      "name": "Aaron Utterback",
+      "email": "autterback3@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
