@@ -28,11 +28,18 @@ $f3->route('GET /order', function () {
     echo $view->render('views/pet-order.html');
 });
 
-//order1 page
+//order2 page
 $f3->route('POST /order2', function () {
     var_dump($_POST);
     $view = new Template();
     echo $view->render('views/pet-order2.html');
+});
+
+//summary page
+$f3->route('POST /summary', function () {
+    var_dump($_POST);
+    $view = new Template();
+    echo $view->render('views/order-summary.html');
 });
 
 $f3->run();
